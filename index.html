@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>65 Tahun Astra | Nantikan ..</title>
+  <link rel="stylesheet" type="text/css" href="styles.css" />
 </head>
 
 <body>
   <div class="main__wrapper">
+    <div class="hero__wrapper">
+      <img alt="Astra" src="./images/logo_astra.png" height="auto" width="129.57px" loading="lazy" />
+      <img alt="Satu Indonesia" src="./images/logo_satu_indonesia.png" height="auto" width="112px" loading="lazy" />
+    </div>
+    <div class="content__item__wrapper">
+      <img class="content__wrapper--logo" alt="65 Tahun Astra" src="./images/logo_65.png" height="auto" width="440px"
+        loading="lazy" />
+    </div>
+    <div class="content__item__wrapper">
+      <p>Nantikan...</p>
+    </div>
+    <div class="content__item__wrapper">
+      <div class="countdown__wrapper">
+        <div class="countdown__wrapper--item">
+          <p id="t__days" class="countdown__wrapper--timer"></p>
+          <p class="countdown__wrapper--label">Hari</p>
+        </div>
+        <div class="countdown__wrapper--colon"><p>:</p></div>
+        <div class="countdown__wrapper--item">
+          <p id="t__hours" class="countdown__wrapper--timer"></p>
+          <p class="countdown__wrapper--label">Jam</p>
+        </div>
+        <div class="countdown__wrapper--colon"><p>:</p></div>
+        <div class="countdown__wrapper--item">
+          <p id="t__minutes" class="countdown__wrapper--timer"></p>
+          <p class="countdown__wrapper--label">Menit</p>
+        </div>
+        <div class="countdown__wrapper--colon"><p>:</p></div>
+        <div class="countdown__wrapper--item">
+          <p id="t__seconds"></p>
+          <p class="countdown__wrapper--label">Detik</p>
+        </div>
+      </div>
+    </div>
   </div>
+  <script>
+    var countDownDate = new Date("Feb 19, 2022 09:00:00").getTime();
+
+    var x = setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("t__days").innerHTML = days;
+      document.getElementById("t__hours").innerHTML = hours;
+      document.getElementById("t__minutes").innerHTML = minutes;
+      document.getElementById("t__seconds").innerHTML = seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("t__days").innerHTML = "00";
+        document.getElementById("t__hours").innerHTML = "00";
+        document.getElementById("t__minutes").innerHTML = "00";
+        document.getElementById("t__seconds").innerHTML = "00";
+      }
+    }, 1000);
+  </script>
 </body>
 
 </html>
