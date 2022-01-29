@@ -33,24 +33,52 @@ body {
   justify-content: space-between;
 }
 
+.hero__wrapper_astra {
+  width: 145px;
+  height: auto;
+}
+
+.hero__wrapper_satu_indonesia {
+  width: 130px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hero__wrapper_astra {
+    width: 110px;
+    height: auto;
+  }
+  
+  .hero__wrapper_satu_indonesia {
+    width: 92px;
+    height: auto;
+  }
+}
+
 .content__item__wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+@media (max-width: 768px) {
+  .content__item__wrapper {
+    margin-top: 5px;
+  }
+}
+
 .content__item__wrapper--logo {
   width: 400px;
   height: auto;
-  margin-top: 65px;
+  margin-top: 35px;
 }
 
 @media (max-width: 768px) {
   .content__item__wrapper--logo {
-    margin-top: 50px;
     width: 75vw;
     max-width: 300px;
     height: auto;
+    margin-top: 75px;
   }
 }
 
@@ -58,13 +86,9 @@ body {
   margin: 0;
   font-size: 36px;
   color: #0054A0;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   line-height: 44px;
-}
-
-.content__item__wrapper {
-  margin-top: 20px;
 }
 
 @media (max-width: 768px) {  
@@ -75,16 +99,17 @@ body {
 }
 
 .countdown__wrapper {
-  padding: 15px 17px;
+  padding: 16px 19px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  background-color: #5383EC;
+  background-color: #0054A0;
+  margin-top: 25px;
 }
+
 @media (max-width: 768px) {  
-  .content__item__wrapper > p {
-    font-size: 24px;
-    line-height: 32px;
+  .countdown__wrapper {
+    padding: 15px 17px;
   }
 }
 
